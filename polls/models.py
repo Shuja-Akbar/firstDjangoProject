@@ -2,11 +2,13 @@
 from __future__ import unicode_literals
 
 from django.db import models
+import datetime
+from django.utils import timezone
 
 # Create your models here.
 
 
-#@python_2_unicode_compatible  # only if you need to support Python 2
+@python_2_unicode_compatible  # only if you need to support Python 2
 class Question(models.Model):
     # ...
     def was_published_recently(self):
@@ -20,7 +22,7 @@ class Question(models.Model):
     pub_date = models.DateTimeField('date published')
 
 
-#@python_2_unicode_compatible  # only if you need to support Python 2
+@python_2_unicode_compatible  # only if you need to support Python 2
 class Choice(models.Model):
     # ...
     def __str__(self):
