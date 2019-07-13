@@ -6,7 +6,7 @@ from django.db import models
 # Create your models here.
 
 
-@python_2_unicode_compatible  # only if you need to support Python 2
+#@python_2_unicode_compatible  # only if you need to support Python 2
 class Question(models.Model):
     # ...
     def __str__(self):
@@ -16,7 +16,7 @@ class Question(models.Model):
     pub_date = models.DateTimeField('date published')
 
 
-@python_2_unicode_compatible  # only if you need to support Python 2
+#@python_2_unicode_compatible  # only if you need to support Python 2
 class Choice(models.Model):
     # ...
     def __str__(self):
