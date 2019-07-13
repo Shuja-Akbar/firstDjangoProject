@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.template import loader
-from django.shortcuts import get_object_or_404, render
 
 from django.http import Http404
 
@@ -12,6 +11,12 @@ from django.http import HttpResponseRedirect, HttpResponse
 from .models import Question
 from django.urls import  reverse
 
+rom django.shortcuts import get_object_or_404, render
+
+
+def results(request, question_id):
+    question = get_object_or_404(Question, pk=question_id)
+    return render(request, 'polls/results.html', {'question': question})
 
 def vote(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
